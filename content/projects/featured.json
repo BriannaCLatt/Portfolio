@@ -1,26 +1,25 @@
 [
 	{
   "project": "PBIS Reward System",
-		"url": "/pbisreward",
+		"url": "",
 		"repo": "Figma/Google Docs",
-		"descriptionTitle": "Empowering Lives, Stregthening Communities",
-		"description": "A Recuperative care/medical respite care website with a responsive design. First professional project as a freelancer.",
+		"descriptionTitle": "2026 Case Study",
+		"description": "More information about this study will be out soon!",
     "imageOptions": [
 		],
 		"images": [
 			{ "key": "mock-stack",
       "hover": "right",
-      "h": "600",
-      "w": "900",
-      "url": "/img/MacBook Pro 16-1.png",
-      "mobileUrl": "/img/pbisre.png",
+      "h": "300",
+      "w": "300",
+      "url": "/img/comingsoon.png",
+      "mobileUrl": "/img/comingsoon.png",
       "mobileH": 300,
       "mobileW": 300
     }
 		],
 		"stack": [
-			{ "key": "figma", 		"name": "Figma", 		"type": "devicon" },
-			{ "key": "wordpress", 		"name": "Wordpress", 		"type": "devicon" }
+			{ "key": "figma", 		"name": "Figma", 		"type": "devicon" }
 
 		]
 },
