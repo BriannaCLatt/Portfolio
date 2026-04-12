@@ -29,14 +29,14 @@
 		"url": "https://www.carechexx.com",
 		"repo": "Live Site - Public",
 		"descriptionTitle": "Empowering Lives, Stregthening Communities",
-		"description": "A Recuperative care/medical respite care website with a responsive design. First professional project as a freelancer.",
+    "description": "A responsive recuperative care website. My first freelance project, where I self-taught Elementor in WordPress and redesigned an existing site.",
 		"imageOptions": [
 		],
 		"images": [
 			{ "key": "mock-stack",
       "hover": "right",
-      "h": "600",
-      "w": "550",
+      "h": "400",
+      "w": "400",
       "url": "/img/chxmock.png",
       "mobileUrl": "/img/chxmock.png",
       "mobileH": 300,
