@@ -1,43 +1,92 @@
 [
 	{
-		"project": "The Suite Spot",
-		"url": "https://the-suite-spot.vercel.app/",
-		"repo": "Github - Public",
-		"descriptionTitle": "Where Beauty Finds its Home",
-		"description": "A salon suite website and shop with a mobile first design. Project for Web Design Workshop II class. Featured in the UCF NSCM's Games and Interactive Media Senior Web Design Showcase.",
-		"imageOptions": [
+  "project": "PBIS Reward System",
+		"url": "/pbisreward",
+		"repo": "Figma/Google Docs",
+		"descriptionTitle": "Empowering Lives, Stregthening Communities",
+		"description": "A Recuperative care/medical respite care website with a responsive design. First professional project as a freelancer.",
+    "imageOptions": [
 		],
 		"images": [
-			{ "key": "mock-stack",	"hover": "right", 	"h": "600", "w": "900", "url": "/img/MacBook Pro 16-1.png" }
+			{ "key": "mock-stack",
+      "hover": "right",
+      "h": "600",
+      "w": "900",
+      "url": "/img/MacBook Pro 16-1.png",
+      "mobileUrl": "/img/pbisre.png",
+      "mobileH": 300,
+      "mobileW": 300
+    }
 		],
 		"stack": [
 			{ "key": "figma", 		"name": "Figma", 		"type": "devicon" },
-			{ "key": "react", 		"name": "React", 		"type": "devicon" },
-			{ "key": "nodejs", 		"name": "Node.js", 		"type": "devicon" },
-			{ "key": "mongodb", 	"name": "MongoDB", 		"type": "devicon" },
-			{ "key": "javascript", 	"name": "JavaScript", 	"type": "devicon" },
-			{ "key": "express-original colored", 	"name": "Express.js", 	"type": "devicon" },
-			{ "key": "redux",		"name": "Redux", 		"type": "devicon" },
-			{ "key": "css3",		"name": "CSS3", 		"type": "devicon" },
-			{ "key": "git",			"name": "Git", 	"type": "devicon" },
-			{ "key": "github",			"name": "Github", 	"type": "devicon" }
+			{ "key": "wordpress", 		"name": "Wordpress", 		"type": "devicon" }
+
 		]
-	},
-	{
-		"project": "SONOFT",
-		"url": "https://www.figma.com/proto/33Ix0jOLWEVuxVqiZSGDGn/SONOFT?page-id=0%3A1&type=design&node-id=7-224&viewport=165%2C386%2C0.22&t=Blx2eToOzwfwL6ES-1&scaling=scale-down&starting-point-node-id=1%3A2&mode=design",
-		"repo": "Figma - Private",
-		"descriptionTitle": "Simple Organizer for Necessary but Often Forgotten Tasks",
-		"description": "A Todo mobile app interface with a focus on UI/UX design principles. Featuring a warm and friendly aesthetic that is compliant with AA and AAA standards. Project for Mobile Development.",
+},
+{
+    "project": "Care Chexx",
+		"url": "https://www.carechexx.com",
+		"repo": "Live Site - Public",
+		"descriptionTitle": "Empowering Lives, Stregthening Communities",
+		"description": "A Recuperative care/medical respite care website with a responsive design. First professional project as a freelancer.",
 		"imageOptions": [
-			{ "key": "size", 		"value": "large" }
 		],
 		"images": [
-			{ "key": "portfolio", "hover": "left", "h": "730", "w": "500",  "url": "/img/SONOFT 3.png" }
+			{ "key": "mock-stack",
+      "hover": "right",
+      "h": "600",
+      "w": "550",
+      "url": "/img/chxmock.png",
+      "mobileUrl": "/img/chxmock.png",
+      "mobileH": 300,
+      "mobileW": 300
+    }
 		],
 		"stack": [
 			{ "key": "figma", 		"name": "Figma", 		"type": "devicon" },
-			{ "key": "canva", 		"name": "Canva", 		"type": "devicon" }
+			{ "key": "wordpress", 		"name": "Wordpress", 		"type": "devicon" }
+
 		]
-	}
+  },
+  {
+    "project": "The Suite Spot",
+    "url": "https://the-suite-spot.vercel.app/",
+    "repo": "Live Site - Public",
+    "descriptionTitle": "Where Beauty Finds its Home",
+    "description": "A salon suite website and shop with a mobile first design. Project for Web Design Workshop II class. Featured in the UCF NSCM's Games and Interactive Media Senior Web Design Showcase.",
+    "imageOptions": [],
+    "images": [
+      {
+        "key": "mock-stack",
+        "hover": "right",
+        "h": "600",
+        "w": "900",
+        "url": "/img/MacBook Pro 16-1.png",
+        "mobileUrl": "/img/MacBook Pro 16-1.png",
+        "mobileH": 300,
+        "mobileW": 300
+      }
+    ],
+    "stack": [
+      { "key": "figma", "name": "Figma", "type": "devicon" },
+      { "key": "react", "name": "React", "type": "devicon" },
+      { "key": "nodejs", "name": "Node.js", "type": "devicon" },
+      { "key": "mongodb", "name": "MongoDB", "type": "devicon" },
+      { "key": "javascript", "name": "JavaScript", "type": "devicon" },
+      { "key": "html5", "name": "HTML5", "type": "devicon" },
+      {
+        "key": "express-original colored",
+        "name": "Express.js",
+        "type": "devicon"
+      },
+      { "key": "redux", "name": "Redux", "type": "devicon" },
+      { "key": "css3", "name": "CSS3", "type": "devicon" },
+      { "key": "git", "name": "Git", "type": "devicon" },
+      { "key": "github", "name": "Github", "type": "devicon" },
+      { "key": "vercel", "name": "Vercel", "type": "devicon" },
+      { "key": "heroku", "name": "Heroku", "type": "devicon" },
+      { "key": "json", "name": "JSON", "type": "devicon" }
+    ]
+  }
 ]

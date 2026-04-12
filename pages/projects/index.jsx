@@ -1,64 +1,99 @@
-// Sections
-import GitRecentProjects from '../../components/sections/projects/recent'
-import OtherProjects from '../../components/sections/projects/others'
+import { useEffect, useState } from 'react';
 
-import Color  from '../../components/utils/page.colors.util'
+import GitRecentProjects from '../../components/sections/projects/recent';
+import OtherProjects from '../../components/sections/projects/others';
+import Color from '../../components/utils/page.colors.util';
 
-import settings from '../../content/_settings.json'
-import colors from '../../content/projects/_colors.json'
+import settings from '../../content/_settings.json';
+import colors from '../../content/projects/_colors.json';
 
-//
-export default function Projects({ user, repos }) {
-	return (
-		<>
-		<Color colors={colors} />
-		<OtherProjects />
-		<GitRecentProjects user={user} repos={repos} />
-		</>
-	)
-}
+export default function Projects() {
+  const [user, setUser] = useState([]);
+  const [repos, setRepos] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-// This gets called on every request
-export async function getServerSideProps({ res }) {
+  useEffect(() => {
+    let isMounted = true;
 
-	res.setHeader(
-		'Cache-Control',
-		'public, s-maxage=600, stale-while-revalidate=59'
-	)
+    async function loadGitHub() {
+      try {
+        setLoading(true);
 
-	const [ gitUserRes, gitReposRes] = await Promise.all( [
-		fetch(`https://api.github.com/users/${settings.username.github}`),
-		fetch(`https://api.github.com/users/${settings.username.github}/repos`),
-	] )
-	
-	let [ user, repos] = await Promise.all( [
-		gitUserRes.json(),
-		gitReposRes.json(), 
-	] )
+        const [gitUserRes, gitReposRes] = await Promise.all([
+          fetch(`https://api.github.com/users/${settings.username.github}`),
+          fetch(`https://api.github.com/users/${settings.username.github}/repos`),
+        ]);
 
-	if (user.login) {
-		user = [user].map( 
-			({ login, name, avatar_url, html_url }) => ({ login, name, avatar_url, html_url })
-		)
-	}
-	
-	if (repos.length) {
-		repos = repos.map( 
-			({ name, fork, description, forks_count, html_url, language, watchers, default_branch, homepage, pushed_at, topics }) => {
-				const timestamp = Math.floor(new Date(pushed_at) / 1000)
-				return ({ name, fork, description, forks_count, html_url, language, watchers, default_branch, homepage, timestamp, topics, pushed_at })
-			}
-		)
+        const userData = await gitUserRes.json();
+        const reposData = await gitReposRes.json();
 
-		repos.sort( (a, b) => b.timestamp - a.timestamp )
+        if (!isMounted) return;
 
-		repos = repos.filter( (e, i) => {
-			if ( i < 8 && ! e.topics.includes('github-config')) return e
-			return false
-		})
-	}
+        const cleanedUser = userData?.login
+          ? [{
+              login: userData.login,
+              name: userData.name,
+              avatar_url: userData.avatar_url,
+              html_url: userData.html_url,
+            }]
+          : [];
 
-	if (!repos || !user) { return { notFound: true,	} }
+        let cleanedRepos = Array.isArray(reposData)
+          ? reposData.map((repo) => {
+              const timestamp = Math.floor(new Date(repo.pushed_at) / 1000);
 
-	return { props: { repos, user } }
+              return {
+                name: repo.name,
+                fork: repo.fork,
+                description: repo.description,
+                forks_count: repo.forks_count,
+                html_url: repo.html_url,
+                language: repo.language,
+                watchers: repo.watchers,
+                default_branch: repo.default_branch,
+                homepage: repo.homepage,
+                timestamp,
+                topics: repo.topics || [],
+                pushed_at: repo.pushed_at,
+              };
+            })
+          : [];
+
+        cleanedRepos.sort((a, b) => b.timestamp - a.timestamp);
+
+        cleanedRepos = cleanedRepos.filter((e, i) => {
+          if (i < 8 && !e.topics.includes('github-config')) return true;
+          return false;
+        });
+
+        setUser(cleanedUser);
+        setRepos(cleanedRepos);
+      } catch (err) {
+        console.error('GitHub fetch failed:', err);
+      } finally {
+        if (isMounted) setLoading(false);
+      }
+    }
+
+    loadGitHub();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  return (
+    <>
+      <Color colors={colors} />
+
+      <OtherProjects />
+
+      {/* instant render, no blocking */}
+      <GitRecentProjects
+        user={user}
+        repos={repos}
+        loading={loading}
+      />
+    </>
+  );
 }

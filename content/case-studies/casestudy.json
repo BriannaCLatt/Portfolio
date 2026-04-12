@@ -1,4 +1,19 @@
-[
+[{
+  "project": "PBIS Reward System",
+		"url": "/pbisreward",
+		"repo": "Figma/Google Docs",
+		"descriptionTitle": "Empowering Lives, Stregthening Communities",
+		"description": "A Recuperative care/medical respite care website with a responsive design. First professional project as a freelancer.",
+    "images": [
+    {
+      "key": "mock-stack",
+      "hover": "right",
+      "h": "480",
+      "w": "400",
+      "url": "/img/pbisre.png"
+    }
+  ]
+},
   {
     "project": "The Suite Spot",
     "url": "/suite-spot",
@@ -9,8 +24,8 @@
       {
         "key": "mock-stack",
         "hover": "right",
-        "h": "480",
-        "w": "400",
+        "h": "450",
+        "w": "450",
         "url": "/img/TSS Circle Logo.png"
       }
     ]
@@ -25,8 +40,8 @@
       {
         "key": "portfolio",
         "hover": "center",
-        "h": "480",
-        "w": "480",
+        "h": "450",
+        "w": "450",
         "url": "/img/AudioBb.png"
       }
     ]

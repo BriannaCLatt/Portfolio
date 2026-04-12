@@ -1,7 +1,5 @@
 @import '../../scss/mixins';
 
-
-
 .caseStudy {
 	display: flex;
 	flex-direction: row;
@@ -10,12 +8,13 @@
 
 	border-radius: 2rem;
 	background-color: var(--background-dim2);
-    border: 1px solid var(--primary-dark);
+	border: 1px solid var(--primary-dark);
 
 	.viewProject svg {
 		@include transition;
 	}
 
+	/* desktop alternating layout */
 	&:nth-of-type(2n) {
 		flex-direction: row-reverse;
 	}
@@ -24,14 +23,12 @@
 		cursor: pointer;
 
 		.viewProject svg {
-			@include transition;
 			color: var(--neon-1-1);
 		}
 	}
 }
 
-
-.projectHeader  {
+.projectHeader {
 	display: flex;
 	flex-direction: column;
 	gap: var(--size-3x);
@@ -45,133 +42,77 @@
 		}
 	}
 
-	.viewProject {
-		svg {
-			height: 1.5rem;
-			color: var(--primary);	
-		}
+	.viewProject svg {
+		height: 1.5rem;
+		color: var(--primary);
 	}
 
 	.header {
 		display: flex;
-		flex-direction: row;
 		align-items: center;
 		gap: 2rem;
-
-		a {
-			flex-grow: 0;
-			flex-shrink: 1;
-		}
-
-		.privateOr {
-			flex-grow: 0;
-			flex-shrink: 1;
-			height: fit-content;
-		}
 	}
-
 }
 
 .details {
 	display: flex;
 	flex-direction: column;
-	flex-grow: 0;
-	flex-shrink: 1;
 	gap: var(--size-3x);
 	overflow: hidden;
-
 	padding: 2rem;
-
-	h3 {
-		position: relative;
-	}
-
-	h4 {
-		margin-bottom: var(--size-1x);
-	}
-
-	ul {
-		z-index: 2;
-	}
 
 	img {
 		display: none;
 	}
 }
 
+/* 🔥 IMAGE SECTION */
 .imageContainer {
 	z-index: 3;
 	position: relative;
-	display: block;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
 	width: 50%;
 	border-radius: 1rem;
-	flex-grow: 1;
 	flex-shrink: 0;
 
 	.imageAnimationContainer {
-		position: absolute;
+		position: relative;
 		overflow: hidden;
 		border-radius: 2rem;
+		width: 100%;
 		height: 100%;
-		width: 115%;
-		right: 0;
-		bottom: 0;
-	  
 
 		> div > div {
+			width: 100%;
+			height: 100%;
+			position: relative;
 
 			> span {
 				position: absolute !important;
-				right: 4rem;
-				left: 50%;
 				top: 50%;
-				transform: translateX(-50%, -50%); //
-	
-				img {
-					width: calc(556px / 1.25) !important;
-				}
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 100%;
+				max-width: 500px;
+			}
+
+			> span img {
+				width: 100%;
+				height: auto;
+				object-fit: contain;
 			}
 		}
 	}
 }
-/*.imageAnimationContainer {
-	position: relative; // Ensure this container is the reference for the absolute positioning of children
-	overflow: hidden;
-	border-radius: 2rem;
-	height: calc(100% - 6rem);
-	width: calc(100% + 9rem);
-	right: 0;
-	bottom: 0;
-  
-	> div > div {
-	  width: 100%; // Ensure the full width for the intermediate divs
-	  height: 100%; // Ensure the full height for better control
-	  position: relative; // Added for clearer structure and positioning context
-  
-	  > span {
-		position: absolute;
-		top: 50%; // Center vertically
-		left: 50%; // Start the span at the center horizontally
-		transform: translate(-50%, -50%); // Center both horizontally and vertically
-  
-		img {
-		  width: auto; // Adjust based on your needs, could be a specific px value
-		  max-width: 100%; // Ensure it doesn't overflow the container
-		  height: auto; // Maintain aspect ratio
-		  // Optionally, you can set a max-height here as well
-		}
-	  }
-	}
-  }*/
-  
+
 .privateOr {
 	display: flex;
-	flex-direction: row;
 	gap: .35rem;
 	align-items: center;
-	max-width: fit-content;
 	font-size: .7rem;
-	font-weight: 400;
 	font-family: var(--font-accent);
 	color: var(--primary-dim);
 	padding: .125rem .5rem;
@@ -180,6 +121,7 @@
 	background: var(--primary-dark);
 }
 
+/* 🌌 background */
 .bgContainer {
 	--opacity: 10%;
 
@@ -189,130 +131,43 @@
 	z-index: -2;
 	width: 100%;
 	height: 500px;
-
-	.afterGlowBg {
-		position: absolute;
-		z-index: -2;
-		top: -50%;
-		right: 0px;
-		height: 1000px;
-		width: 500px;
-		transform: translateX(50%);
-		filter: blur(200px);
-		opacity: var(--opacity);
-		// background: linear-gradient(180deg, rgb(41, 212, 112) 0%,  rgb(242, 240, 79) 100% );	
-		background: linear-gradient(180deg, var(--neon-1-1) 0%,  var(--neon-1-2) 100% );	
-	}
-
-	.orbitalBg {
-		// --left: linear-gradient(180deg, rgb(51, 205, 229) 0%,  rgb(229, 51, 140) 100% );
-		// --center: linear-gradient(180deg, rgb(41, 212, 112) 0%,  rgb(242, 240, 79) 100% );
-		// --right: linear-gradient(180deg, rgb(78, 21, 115) 0%,  rgb(103, 242, 79) 100% );
-		--left: linear-gradient(180deg, var(--neon-2-1) 0%,  var(--neon-2-2) 100% );
-		--center: linear-gradient(180deg, var(--neon-1-1) 0%,  var(--neon-1-2) 100% );
-		--right: linear-gradient(180deg, var(--neon-2-2) 0%,  var(--neon-1-1) 100% );
-		
-		position: absolute;
-		z-index: -1;
-		width: 100%;
-		left: -50%;
-	
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		gap: 2rem;
-		
-		height: 500px;
-	
-		filter: blur(200px);
-	
-		animation: rotationFore 240s linear infinite;
-		transform-origin: center center;
-		
-	
-		.bgSection {
-			position: relative;
-			width: calc(100% / 3 - 2rem);
-			aspect-ratio: 1;
-			height: 100%;
-		}
-	
-		.bgInner {
-			height: 100%;
-			width: 100%;
-			display: block;
-			border-radius: 99rem;
-		}
-
-		.heroOrbital {
-			height: 200%;
-			top: 50%;
-			transform: translateY(-50%);
-		}
-	
-		.heroLeft {
-			position: absolute;
-			left: -50%;
-			background: var(--left);
-			opacity: calc(var(--opacity) + 15%);
-		}
-		.heroCenter {
-			background: var(--center);
-			opacity: var(--opacity);
-		}
-		.heroRight {
-			position: absolute;
-			right: -50%;
-			background: var(--right);
-			opacity: calc(var(--opacity) + 15%);
-		}
-	
-	
-		@keyframes rotationFore {
-			0% {
-				transform: rotate(0deg);
-			}
-			100% {
-				transform: rotate(360deg);
-			}
-		} 
-	}
 }
 
+/* 📱 MOBILE FIX (clean version) */
 @include media($max: $mobile) {
 	.caseStudy {
-	  &:nth-of-type(n) {
 		flex-direction: column;
 		align-items: center;
-  
+
+		/* cancel alternating layout on mobile */
+		&:nth-of-type(2n) {
+			flex-direction: column;
+		}
+
 		.details {
-		  width: 100%;
-		  padding: var(--size-2x);
-		  border-radius: 1rem;
+			width: 100%;
+			padding: var(--size-2x);
+			border-radius: 1rem;
 		}
-  
+
 		.imageContainer {
-		  width: 100%;
-		  max-width: none;
+			width: 100%;
 		}
-  
+
 		.imageAnimationContainer {
-		  width: 100%;
-		  
-		  > div > div {
-			span {
-			  display: block;
-			  width: 100%;
-			  img {
+			width: 100%;
+
+			> div > div span {
+				position: relative !important;
+				transform: none;
+				width: 100%;
+			}
+
+			img {
 				width: 100%;
 				height: auto;
-				max-width: 100%;
 				object-fit: cover;
-			  }
 			}
-		  }
 		}
-	  }
 	}
-  }
-  
+}

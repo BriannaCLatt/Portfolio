@@ -1,8 +1,58 @@
 [
   {
+  "project": "PBIS Reward System",
+		"url": "/pbisreward",
+		"repo": "Figma/Google Docs",
+		"descriptionTitle": "Empowering Lives, Stregthening Communities",
+		"description": "A Recuperative care/medical respite care website with a responsive design. First professional project as a freelancer.",
+    "imageOptions": [
+		],
+		"images": [
+			{ "key": "mock-stack",
+      "hover": "right",
+      "h": "600",
+      "w": "900",
+      "url": "/img/MacBook Pro 16-1.png",
+      "mobileUrl": "/img/pbisre.png",
+      "mobileH": 300,
+      "mobileW": 300
+    }
+		],
+		"stack": [
+			{ "key": "figma", 		"name": "Figma", 		"type": "devicon" },
+			{ "key": "wordpress", 		"name": "Wordpress", 		"type": "devicon" }
+
+		]
+},
+{
+    "project": "Care Chexx",
+		"url": "https://www.carechexx.com",
+		"repo": "Live Site - Public",
+		"descriptionTitle": "Empowering Lives, Stregthening Communities",
+    "description": "A responsive recuperative care website. My first freelance project, where I self-taught Elementor in WordPress and redesigned an existing site.",
+		"imageOptions": [
+		],
+		"images": [
+			{ "key": "mock-stack",
+      "hover": "right",
+      "h": "400",
+      "w": "400",
+      "url": "/img/chxmock.png",
+      "mobileUrl": "/img/chxmock.png",
+      "mobileH": 300,
+      "mobileW": 300
+    }
+		],
+		"stack": [
+			{ "key": "figma", 		"name": "Figma", 		"type": "devicon" },
+			{ "key": "wordpress", 		"name": "Wordpress", 		"type": "devicon" }
+
+		]
+  },
+  {
     "project": "The Suite Spot",
     "url": "https://the-suite-spot.vercel.app/",
-    "repo": "Github - Public",
+    "repo": "Live Site - Public",
     "descriptionTitle": "Where Beauty Finds its Home",
     "description": "A salon suite website and shop with a mobile first design. Project for Web Design Workshop II class. Featured in the UCF NSCM's Games and Interactive Media Senior Web Design Showcase.",
     "imageOptions": [],
@@ -12,7 +62,10 @@
         "hover": "right",
         "h": "600",
         "w": "900",
-        "url": "/img/MacBook Pro 16-1.png"
+        "url": "/img/MacBook Pro 16-1.png",
+        "mobileUrl": "/img/MacBook Pro 16-1.png",
+        "mobileH": 300,
+        "mobileW": 300
       }
     ],
     "stack": [
@@ -46,10 +99,13 @@
     "images": [
       {
         "key": "portfolio",
-        "hover": "left",
-        "h": "730",
-        "w": "500",
-        "url": "/img/SONOFT 3.png"
+        "hover": "right",
+        "h": "650",
+        "w": "650",
+        "url": "/img/sonoft mock.png",
+        "mobileUrl": "/img/sonoft mock.png",
+        "mobileH": 300,
+        "mobileW": 300
       }
     ],
     "stack": [
@@ -67,10 +123,14 @@
     "images": [
       {
         "key": "portfolio",
-        "hover": "left",
-        "h": "719",
-        "w": "430",
-        "url": "/img/b+t.png"
+        "hover": "right",
+        "h": "650",
+        "w": "650",
+        "url": "/img/bolt.png",
+        "mobileUrl": "/img/bolt.png",
+        "mobileH": 300,
+        "mobileW": 300
+        
       }
     ],
     "stack": [{ "key": "figma", "name": "Figma", "type": "devicon" }]
@@ -85,10 +145,13 @@
     "images": [
       {
         "key": "portfolio",
-        "hover": "left",
-        "h": "700",
-        "w": "502",
-        "url": "/img/2KanBop official.png"
+        "hover": "right",
+        "h": "650",
+        "w": "650",
+        "url": "/img/2kan mock.png",
+        "mobileUrl": "/img/2kan mock.png",
+        "mobileH": 300,
+        "mobileW": 300
       }
     ],
     "stack": [
@@ -106,10 +169,13 @@
     "images": [
       {
         "key": "portfolio",
-        "hover": "left",
-        "h": "540",
-        "w": "720",
-        "url": "/img/quizApp.png"
+        "hover": "right",
+        "h": "530",
+        "w": "530",
+        "url": "/img/quizApp.png",
+        "mobileUrl": "/img/quizApp.png",
+        "mobileH": 300,
+        "mobileW": 300
       }
     ],
     "stack": [
@@ -128,10 +194,13 @@
     "images": [
       {
         "key": "portfolio",
-        "hover": "left",
-        "h": "528",
-        "w": "736",
-        "url": "/img/Boltify.png"
+        "hover": "right",
+        "h": "530",
+        "w": "530",
+        "url": "/img/Boltify.png",
+        "mobileUrl": "/img/Boltify.png",
+        "mobileH": 300,
+        "mobileW": 300
       }
     ],
     "stack": [
