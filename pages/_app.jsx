@@ -1,6 +1,6 @@
 // Core packages
 import { Analytics } from '@vercel/analytics/react';
-import { useEffect, useState } from 'react';
+import { LazyMotion, domAnimation } from "framer-motion";
 
 // Utils
 import SetGridGap from '../components/utils/set.grid.util';
@@ -26,24 +26,15 @@ import '../styles/css/variables.css';
 import '../styles/css/global.css';
 
 export default function MyApp({ Component, pageProps }) {
-	const [enableGrid, setEnableGrid] = useState(false);
-
-	useEffect(() => {
-		// delay so it doesn't block render
-		const t = setTimeout(() => setEnableGrid(true), 100);
-		return () => clearTimeout(t);
-	}, []);
-
 	return (
 		<>
-			<Layout>
-				<Component {...pageProps} />
-
-				{/* Load AFTER render */}
-				{enableGrid && <SetGridGap />}
-
-				<Analytics />
-			</Layout>
+			<LazyMotion features={domAnimation}>
+				<Layout>
+					<Component {...pageProps} />
+					<SetGridGap />
+					<Analytics />
+				</Layout>
+			</LazyMotion>
 		</>
 	);
 }
