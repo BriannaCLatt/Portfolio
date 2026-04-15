@@ -1,8 +1,9 @@
 // Core packages
 import { Analytics } from '@vercel/analytics/react';
+import { useEffect, useState } from 'react';
 
 // Utils
-// import SetGridGap from '../components/utils/set.grid.util' // disabled for testing
+import SetGridGap from '../components/utils/set.grid.util';
 
 // Structure
 import Layout from '../components/layout/layout';
@@ -25,11 +26,22 @@ import '../styles/css/variables.css';
 import '../styles/css/global.css';
 
 export default function MyApp({ Component, pageProps }) {
+	const [enableGrid, setEnableGrid] = useState(false);
+
+	useEffect(() => {
+		// delay so it doesn't block render
+		const t = setTimeout(() => setEnableGrid(true), 100);
+		return () => clearTimeout(t);
+	}, []);
+
 	return (
 		<>
 			<Layout>
 				<Component {...pageProps} />
-				{/* <SetGridGap /> disabled for performance testing */}
+
+				{/* Load AFTER render */}
+				{enableGrid && <SetGridGap />}
+
 				<Analytics />
 			</Layout>
 		</>
