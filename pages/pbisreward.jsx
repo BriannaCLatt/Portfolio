@@ -6,21 +6,21 @@ import css from "../styles/sections/projects/featured.module.scss";
 
 export default function SuiteSpotPage() {
   const [isMobile, setIsMobile] = useState(false);
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    // This function now safely checks the window object
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
-    // Run once to set initial state
     handleResize();
-
-    // Set up event listener
     window.addEventListener("resize", handleResize);
-
-    // Clean up event listener
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const t = setTimeout(() => setShowContent(true), 50);
+    return () => clearTimeout(t);
   }, []);
 
   const flexContainerStyle = {
@@ -45,6 +45,7 @@ export default function SuiteSpotPage() {
 
   const imageStyle = { width: "80%", height: "auto", margin: "auto" };
   const imageStyled = { width: "120%", height: "auto", margin: "auto" };
+
   return (
     <>
       <Section classProp={css.hasBg}>
@@ -54,64 +55,71 @@ export default function SuiteSpotPage() {
             preTitle="Where Beauty Finds its Home"
             subTitle="Web Design Workshop Fall &amp; Spring Project"
           />
-          {/* Add a photo of the completed website */}
-          <div style={flexContainerStyle}>
-          <img
-                    src="/img/Group 1.png"
-                    alt="Collage of The Suite Spot's booking, homepage, and shop"
-                    style={imageStyled}
-                  />
-                  <a
+
+          {showContent && (
+            <>
+              <div style={flexContainerStyle}>
+                <img
+                  src="/img/Group 1.png"
+                  alt="Collage of The Suite Spot's booking, homepage, and shop"
+                  style={imageStyled}
+                  loading="lazy"
+                />
+                <a
                   href="https://the-suite-spot.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
-                >Click here to visit The Suite Spot!</a>
+                >
+                  Click here to visit The Suite Spot!
+                </a>
               </div>
-          <section className="overview-section">
-            <h2 className="tss-section-title">What is The Suite Spot?</h2>
-            <br />
-            <p>
-              The Suite Spot is a user-friendly website designed primarily for
-              mobile devices, catering to professionals renting salon suites and
-              their clientele. Crafted exclusively by our team, it serves as a
-              central platform where business owners and their customers can
-              connect seamlessly.
-            </p>
-            <br />
-            <h3>For the professionals: </h3>
-            <ul className="list">
-              <li>Manage their own enterprises within our salon suites.</li>
-              <li>
-                Showcase their expertise and services on personalized profiles.
-              </li>
-              <li>
-                Access information on suite rentals and other relevant
-                resources.
-              </li>
-              <li>
-                Inform clients about offered services and special promotions for
-                enhanced visibility.
-              </li>
-              <li>
-                Highlight current promotions on the homepage to boost
-                appointment bookings.
-              </li>
-            </ul>
-            <br />
-            <h3>For the clients:</h3>
-            <ul className="list">
-              <li>Stay informed about the latest trends in the industry.</li>
-              <li>
-                Shop for products from our online store and view past purchases.
-              </li>
-              <li>Easily manage appointments and update personal profiles.</li>
-              <li>
-                Discover more about our company, services, and product
-                offerings.
-              </li>
-            </ul>
-          </section>
 
+              <section className="overview-section">
+                <h2 className="tss-section-title">What is The Suite Spot?</h2>
+                <br />
+                <p>
+                  The Suite Spot is a user-friendly website designed primarily for
+                  mobile devices, catering to professionals renting salon suites and
+                  their clientele. Crafted exclusively by our team, it serves as a
+                  central platform where business owners and their customers can
+                  connect seamlessly.
+                </p>
+                <br />
+                <h3>For the professionals: </h3>
+                <ul className="list">
+                  <li>Manage their own enterprises within our salon suites.</li>
+                  <li>
+                    Showcase their expertise and services on personalized profiles.
+                  </li>
+                  <li>
+                    Access information on suite rentals and other relevant
+                    resources.
+                  </li>
+                  <li>
+                    Inform clients about offered services and special promotions for
+                    enhanced visibility.
+                  </li>
+                  <li>
+                    Highlight current promotions on the homepage to boost
+                    appointment bookings.
+                  </li>
+                </ul>
+                <br />
+                <h3>For the clients:</h3>
+                <ul className="list">
+                  <li>Stay informed about the latest trends in the industry.</li>
+                  <li>
+                    Shop for products from our online store and view past purchases.
+                  </li>
+                  <li>Easily manage appointments and update personal profiles.</li>
+                  <li>
+                    Discover more about our company, services, and product
+                    offerings.
+                  </li>
+                </ul>
+              </section>
+            </>
+          )}
           {/* Designing Section */}
           <section className="documentation-section">
             <h2 className="tss-section-title">The Grind: Designing</h2>
@@ -131,6 +139,7 @@ export default function SuiteSpotPage() {
                     src="/img/Design3.jpeg"
                     alt="Design documentation for The Suite Spot"
                     style={imageStyle}
+                    loading="lazy"
                   />
                 </a>
               </div>
@@ -141,6 +150,7 @@ export default function SuiteSpotPage() {
                     src="/img/testingPlan.jpeg"
                     alt="Development plans and final design guide for The Suite Spot"
                     style={imageStyle}
+                    loading="lazy"
                   />
                 </a>
               </div>
@@ -217,6 +227,7 @@ export default function SuiteSpotPage() {
                   src="/img/SketchM.png"
                   alt="Mobile UX Sketch for The Suite Spot"
                   style={{ width: "80%", height: "auto", margin: "auto" }}
+                  loading="lazy"
                 />
               </a>
             </div>
@@ -233,6 +244,7 @@ export default function SuiteSpotPage() {
                   src="/img/SketchW.png"
                   alt="Web UX Sketch for The Suite Spot"
                   style={{ width: "100%", height: "auto" }}
+                  loading="lazy"
                 />
               </a>
             </div>
@@ -262,6 +274,7 @@ export default function SuiteSpotPage() {
                   src="/img/Lofi MP.png"
                   alt="Mobile Lo-fi prototype for The Suite Spot"
                   style={{ width: "80%", height: "auto", margin: "auto" }}
+                  loading="lazy"
                 />
               </a>
             </div>
@@ -277,6 +290,7 @@ export default function SuiteSpotPage() {
                   className="protoW"
                   src="/img/Lofi WP.png"
                   alt="Web Lo-fi prototype for The Suite Spot"
+                  loading="lazy"
                 />
               </a>
             </div>
@@ -356,6 +370,7 @@ export default function SuiteSpotPage() {
                   src="/img/after mobile 1.png"
                   alt="Mobile Hi-fi prototype for The Suite Spot"
                   style={{ width: "80%", height: "auto", margin: "auto" }}
+                  loading="lazy"
                 />
               </a>
             </div>
@@ -371,6 +386,7 @@ export default function SuiteSpotPage() {
                   className="protoW"
                   src="/img/HiWeb.png"
                   alt="Web Hi-fi prototype for The Suite Spot"
+                  loading="lazy"
                 />
               </a>
             </div>
@@ -395,6 +411,7 @@ export default function SuiteSpotPage() {
                     src="/img/Milestone5.jpeg"
                     alt="Front-end development documentation"
                     style={imageStyle}
+                    loading="lazy"
                   />
                 </a>
               </div>
@@ -405,6 +422,7 @@ export default function SuiteSpotPage() {
                     src="/img/Milestone6.jpeg"
                     alt="Back-end development documentation"
                     style={imageStyle}
+                    loading="lazy"
                   />
                 </a>
               </div>
@@ -415,6 +433,7 @@ export default function SuiteSpotPage() {
                     src="/img/M7.jpeg"
                     alt="Testing and Debugging documentation"
                     style={imageStyle}
+                    loading="lazy"
                   />
                 </a>
               </div>
@@ -425,6 +444,7 @@ export default function SuiteSpotPage() {
                     src="/img/Milestone8.jpeg"
                     alt="Deployment documentation"
                     style={imageStyle}
+                    loading="lazy"
                   />
                 </a>
               </div>
@@ -475,23 +495,25 @@ export default function SuiteSpotPage() {
                     src="/img/dreamTeam.png"
                     alt="Group 8 a.k.a The Suite Spot Dream Team"
                     style={imageStyle}
+                    loading="lazy"
                   />
               <h3>The Suite Spot Dream Team (from left to right)</h3>
               <p>Quynh Vo, Lillian Allgood, Lindsey Wolbrink, Brianna Lattimore (me), and Callie Vaughn</p>
             </div>
           </section>
         </Container>
+
         <div className={css.bgContainer}>
           <span className={css.orbitalBg}>
-            <span class={`${css.bgSection}`}>
+            <span className={css.bgSection}>
               <span
                 className={`${css.bgInner} ${css.heroLeft} ${css.heroOrbital}`}
               ></span>
             </span>
-            <span class={`${css.bgSection}`}>
+            <span className={css.bgSection}>
               <span className={`${css.bgInner} ${css.heroCenter}`}></span>
             </span>
-            <span class={`${css.bgSection}`}>
+            <span className={css.bgSection}>
               <span
                 className={`${css.bgInner} ${css.heroRight} ${css.heroOrbital}`}
               ></span>
