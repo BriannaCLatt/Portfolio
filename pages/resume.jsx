@@ -57,14 +57,14 @@ export default function Resume() {
               padding: 0,
               margin: 0
             }}
-            src="https://www.canva.com/design/DAF9RbZ9Hl8/PmSkZCcLKAzwQgQAOf1CIA/view?embed"
+            src="https://www.canva.com/design/DAHSyD4hpbM/mUorTvC57G8mwXdeot4BuQ/view?embed"
             allowFullScreen
           />
         </div>
       )}
 
       <a
-        href="https://www.canva.com/design/DAF9RbZ9Hl8/PmSkZCcLKAzwQgQAOf1CIA/view?utm_content=DAF9RbZ9Hl8&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
+        href="https://canva.link/6zfd53wiyaqtpjd"
         target="_blank"
         rel="noopener noreferrer"
       >
